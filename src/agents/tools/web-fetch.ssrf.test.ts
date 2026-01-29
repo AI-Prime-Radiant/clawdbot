@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const lookupMock = vi.fn();
 
@@ -32,6 +32,10 @@ function textResponse(body: string): Response {
 
 describe("web_fetch SSRF protection", () => {
   const priorFetch = global.fetch;
+
+  beforeEach(() => {
+    vi.resetModules();
+  });
 
   afterEach(() => {
     // @ts-expect-error restore
