@@ -304,6 +304,16 @@ importers:
 
   extensions/discord: {}
 
+  extensions/feishu:
+    dependencies:
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
+    devDependencies:
+      clawdbot:
+        specifier: workspace:*
+        version: link:../..
+
   extensions/google-antigravity-auth: {}
 
   extensions/google-gemini-cli-auth: {}
